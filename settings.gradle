@@ -1,0 +1,5 @@
+rootProject.name = 'MarketSurvey'
+include 'market-persistence'
+include 'market-business'
+include 'market-api'
+
