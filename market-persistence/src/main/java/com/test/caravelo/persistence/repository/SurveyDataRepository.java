@@ -1,11 +1,14 @@
 package com.test.caravelo.persistence.repository;
 
 import com.test.caravelo.persistence.model.Survey;
+import com.test.caravelo.persistence.model.SurveyData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface SurveyRepository extends JpaRepository<Survey,Long> {
+import java.util.List;
 
-    Survey findBySubject(String subject);
+@Repository
+public interface SurveyDataRepository extends JpaRepository<SurveyData,Long> {
+
+    List<SurveyData> findBySurvey(Survey survey);
 }
