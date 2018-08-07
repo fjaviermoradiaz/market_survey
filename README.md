@@ -16,3 +16,52 @@ La aplicación usa una base de datos en memoria H2, para acceder a la consola de
 Una vez arrancado podemos acceder a la api de swagger, para comprobar la documentación y poder probar la aplicación accediendo a http://localhost:8080/swagger-ui.html#/
 
 Para implementar el envío de información a proveedores se ha simulado un envío simultáneo usando threads, aunque la solución mas óptima sería enviar la información a colas de AWS para su posterior procesado mediante lambdas. 
+
+
+Ejemplo para probar la API
+
+```
+{
+   "requester": {
+      "id": "CVO",
+      "name": "Caravelo"
+   },
+   "provider": [
+    {
+      "id": "TGI",
+      "name": "Kantar"
+    },
+    {
+      "id": "CAR",
+      "name": "Caravelo"
+    }
+  ],
+   "survey": {
+      "subject": "8000001",
+      "target": {
+         "gender": "M",
+         "age": [
+            30,
+            60
+         ],
+         "income": {
+            "currency": "EUR",
+            "range": [
+               100,
+               3000
+            ]
+         }
+      },
+      "country": "ES"
+   },
+   "subscription": {
+      "frequency": "weekly",
+      "channel": [
+         "postal",
+         "mail",
+         "api",
+         "ftp"
+      ]
+   }
+}
+```
