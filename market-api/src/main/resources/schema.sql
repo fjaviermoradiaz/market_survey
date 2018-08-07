@@ -1,9 +1,8 @@
 create table survey
 (
-   id bigint auto_increment,
    subject varchar(255) not null,
    country varchar(3) not null,
-   primary key(id)
+   primary key(subject)
 );
 
 
@@ -21,9 +20,19 @@ create table target
 create table survey_data
 (
    id bigint auto_increment,
-   survey_id bigint not null,
+   survey_id varchar(255) not null,
    target_id bigint not null,
    primary key(id),
-foreign key (survey_id) references SURVEY(id),
+foreign key (survey_id) references SURVEY(subject),
 foreign key (target_id) references TARGET(id)
+);
+
+create table provider
+(
+   id VARCHAR(5),
+   name VARCHAR(255) not null,
+   email VARCHAR(255),
+   api_url VARCHAR(255),
+   ftp_url VARCHAR(255),
+   primary key(id)
 );

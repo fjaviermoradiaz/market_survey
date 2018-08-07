@@ -5,7 +5,7 @@ public class TargetDTO {
     private String gender;
     private Integer age;
     private String incomeCurrency;
-    private String incomeQuantity;
+    private Integer incomeQuantity;
 
     public String getGender() {
         return gender;
@@ -31,11 +31,11 @@ public class TargetDTO {
         this.incomeCurrency = incomeCurrency;
     }
 
-    public String getIncomeQuantity() {
+    public Integer getIncomeQuantity() {
         return incomeQuantity;
     }
 
-    public void setIncomeQuantity(String incomeQuantity) {
+    public void setIncomeQuantity(Integer incomeQuantity) {
         this.incomeQuantity = incomeQuantity;
     }
 }

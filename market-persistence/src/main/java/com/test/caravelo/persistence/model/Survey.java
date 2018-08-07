@@ -7,20 +7,12 @@ import java.io.Serializable;
 @Table(name = "SURVEY")
 public class Survey implements Serializable {
 
-    private Long id;
+
     private String subject;
     private String country;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    @Column(name = "subject")
     public String getSubject() {
         return subject;
     }
@@ -40,7 +32,6 @@ public class Survey implements Serializable {
     @Override
     public String toString() {
         return "Survey{" +
-                "id=" + id +
                 ", subject='" + subject + '\'' +
                 ", country='" + country + '\'' +
                 '}';
